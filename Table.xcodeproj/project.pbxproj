@@ -19,6 +19,8 @@
 		FC207A7A20EE212E0019EFA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC207A7820EE212E0019EFA6 /* LaunchScreen.storyboard */; };
 		FC207A8520EE212E0019EFA6 /* TableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC207A8420EE212E0019EFA6 /* TableTests.swift */; };
 		FC207A9020EE212E0019EFA6 /* TableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC207A8F20EE212E0019EFA6 /* TableUITests.swift */; };
+		FC2BD53321A558E100CB6255 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2BD53221A558E100CB6255 /* CoreDataManager.swift */; };
+		FC2BD53621A55D0E00CB6255 /* PlayerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC2BD53421A55D0E00CB6255 /* PlayerModel.xcdatamodeld */; };
 		FC5577C92122DCE1007D624F /* AddPlayerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5577C82122DCE1007D624F /* AddPlayerAlertViewController.swift */; };
 		FCD8DF9120FF38B40035B79F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD8DF9020FF38B40035B79F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		FC207A8B20EE212E0019EFA6 /* TableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC207A8F20EE212E0019EFA6 /* TableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableUITests.swift; sourceTree = "<group>"; };
 		FC207A9120EE212E0019EFA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC2BD53221A558E100CB6255 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FC2BD53521A55D0E00CB6255 /* PlayerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlayerModel.xcdatamodel; sourceTree = "<group>"; };
 		FC5577C82122DCE1007D624F /* AddPlayerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerAlertViewController.swift; sourceTree = "<group>"; };
 		FCD8DF9020FF38B40035B79F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +139,9 @@
 		FC11FDD8219DA96A001A6B1C /* Data Layer */ = {
 			isa = PBXGroup;
 			children = (
+				FC2BD53421A55D0E00CB6255 /* PlayerModel.xcdatamodeld */,
 				FC11FDD6219DA961001A6B1C /* DataManager.swift */,
+				FC2BD53221A558E100CB6255 /* CoreDataManager.swift */,
 			);
 			path = "Data Layer";
 			sourceTree = "<group>";
@@ -284,11 +290,13 @@
 					};
 					FC207A7F20EE212E0019EFA6 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FC207A6B20EE212E0019EFA6;
 					};
 					FC207A8A20EE212E0019EFA6 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FC207A6B20EE212E0019EFA6;
 					};
@@ -504,6 +512,8 @@
 				FC207A7220EE212E0019EFA6 /* ViewController.swift in Sources */,
 				FC5577C92122DCE1007D624F /* AddPlayerAlertViewController.swift in Sources */,
 				FC1D2651212C0F16007E2252 /* Player.swift in Sources */,
+				FC2BD53321A558E100CB6255 /* CoreDataManager.swift in Sources */,
+				FC2BD53621A55D0E00CB6255 /* PlayerModel.xcdatamodeld in Sources */,
 				FC207A7020EE212E0019EFA6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,7 +694,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "173984d7-9262-483a-8556-0e29df940a25";
 				PROVISIONING_PROFILE_SPECIFIER = Wildcard_Dev;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -701,7 +711,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.silicus.Table;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -717,7 +727,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silicus.TableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Table.app/Table";
 			};
@@ -734,7 +744,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silicus.TableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Table.app/Table";
 			};
@@ -750,7 +760,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silicus.TableUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Table;
 			};
@@ -766,7 +776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silicus.TableUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Table;
 			};
@@ -812,6 +822,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FC2BD53421A55D0E00CB6255 /* PlayerModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FC2BD53521A55D0E00CB6255 /* PlayerModel.xcdatamodel */,
+			);
+			currentVersion = FC2BD53521A55D0E00CB6255 /* PlayerModel.xcdatamodel */;
+			path = PlayerModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FC207A6420EE212E0019EFA6 /* Project object */;
 }

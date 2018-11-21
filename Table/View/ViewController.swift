@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tableView:UITableView?
     
-    var names:Array<Any>?
+    var names:Array<Player>?
     var selectedPlayer:Player?
     
     let dataManager:DataManager? = DataManager.init()
@@ -23,10 +23,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if((player) != nil ) {
             
-            print("User added player: " + (player?.firstName)!)
-//            names?.add(player!)
-            names?.append(player!)
-            tableView?.reloadData()
+            let (result, error) = (dataManager?.save(player: player!))!
+            if(result == true) {
+                
+                print("User added player: " + (player?.firstName)!)
+                names?.append(player!)
+                tableView?.reloadData()
+            }
+            else {
+                print(error)
+            }
         }
     }
     
@@ -41,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier")!
         
-        let player:Player = names![indexPath.row] as! Player
+        let player = names![indexPath.row] as Player
         
         cell.textLabel?.text = player.firstName
         return cell
@@ -50,7 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: - Table Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedPlayer = (names![indexPath.row] as! Player)
+        selectedPlayer = (names![indexPath.row] as Player)
         
 //        print("Selected " + (names![indexPath.row] as! String))
 //        selectedPlayer = names![indexPath.row] as? String
@@ -100,7 +106,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        names = [virat, rohit, mahi]
         
         let dataManager = DataManager.init()
-        names = dataManager.getPlayers()
+        let (players, error) = dataManager.getPlayers()
+        if(error == "") {
+            names = players
+        }
+        
 
         
         //Add Navigation Bar button programatically
@@ -130,7 +140,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
-
-
 }
 

@@ -33,4 +33,34 @@ class TableTests: XCTestCase {
         }
     }
     
+    //Mark: Core Data Test
+    
+    func testSaveInCoreData () {
+        
+        let dataManager = DataManager()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+        let rickey = Player(firstName: "Rickey", lastName: "Pointing", date: formatter.date(from: "01/12/2018")!, matches: 100)
+        let (result, error) = dataManager.save(player: rickey)
+        
+        if(result != true) {
+            print(error)
+        }
+        else {
+            print("Saved entity successfully")
+        }
+    }
+    
+    func testFetchFromCoreData() {
+        
+        let dataManager = DataManager()
+        
+        let (players, error) = dataManager.getPlayers()
+        
+        if(error == "") {
+            print(players)
+        }
+    }
 }

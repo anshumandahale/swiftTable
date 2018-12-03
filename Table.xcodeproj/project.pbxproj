@@ -22,6 +22,7 @@
 		FC2BD53321A558E100CB6255 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2BD53221A558E100CB6255 /* CoreDataManager.swift */; };
 		FC2BD53621A55D0E00CB6255 /* PlayerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC2BD53421A55D0E00CB6255 /* PlayerModel.xcdatamodeld */; };
 		FC5577C92122DCE1007D624F /* AddPlayerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5577C82122DCE1007D624F /* AddPlayerAlertViewController.swift */; };
+		FC687F0421B024AD00026203 /* PlayerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC687F0321B024AD00026203 /* PlayerTableCell.swift */; };
 		FCD8DF9120FF38B40035B79F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD8DF9020FF38B40035B79F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		FC2BD53221A558E100CB6255 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FC2BD53521A55D0E00CB6255 /* PlayerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlayerModel.xcdatamodel; sourceTree = "<group>"; };
 		FC5577C82122DCE1007D624F /* AddPlayerAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerAlertViewController.swift; sourceTree = "<group>"; };
+		FC687F0321B024AD00026203 /* PlayerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableCell.swift; sourceTree = "<group>"; };
 		FCD8DF9020FF38B40035B79F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,8 @@
 		FC11FDD5219DA8B8001A6B1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FC687F0221B0248A00026203 /* TableCell */,
+				FC207A7320EE212E0019EFA6 /* Main.storyboard */,
 				FC207A7120EE212E0019EFA6 /* ViewController.swift */,
 				FCD8DF9020FF38B40035B79F /* DetailViewController.swift */,
 				FC5577C82122DCE1007D624F /* AddPlayerAlertViewController.swift */,
@@ -183,7 +187,6 @@
 				FC11FDD8219DA96A001A6B1C /* Data Layer */,
 				FC1D264D212C0E08007E2252 /* Model */,
 				FC11FDD5219DA8B8001A6B1C /* View */,
-				FC207A7320EE212E0019EFA6 /* Main.storyboard */,
 				FC207A7620EE212E0019EFA6 /* Assets.xcassets */,
 				FC207A7820EE212E0019EFA6 /* LaunchScreen.storyboard */,
 				FC207A7B20EE212E0019EFA6 /* Info.plist */,
@@ -207,6 +210,14 @@
 				FC207A9120EE212E0019EFA6 /* Info.plist */,
 			);
 			path = TableUITests;
+			sourceTree = "<group>";
+		};
+		FC687F0221B0248A00026203 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC687F0321B024AD00026203 /* PlayerTableCell.swift */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +523,7 @@
 				FC207A7220EE212E0019EFA6 /* ViewController.swift in Sources */,
 				FC5577C92122DCE1007D624F /* AddPlayerAlertViewController.swift in Sources */,
 				FC1D2651212C0F16007E2252 /* Player.swift in Sources */,
+				FC687F0421B024AD00026203 /* PlayerTableCell.swift in Sources */,
 				FC2BD53321A558E100CB6255 /* CoreDataManager.swift in Sources */,
 				FC2BD53621A55D0E00CB6255 /* PlayerModel.xcdatamodeld in Sources */,
 				FC207A7020EE212E0019EFA6 /* AppDelegate.swift in Sources */,

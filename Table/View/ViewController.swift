@@ -45,11 +45,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell")! as! PlayerTableCell
         
         let player = names![indexPath.row] as Player
         
-        cell.textLabel?.text = player.firstName
+        cell.playerImageView?.image = UIImage.init(named: "boy")
+        cell.nameLabel?.text = player.firstName  + player.lastName
+        cell.matchesLabel?.text = "Matches: " + String(player.matches)
+        
         return cell
     }
     
@@ -63,6 +66,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.performSegue(withIdentifier: "segueToDetailVC", sender: self)
     }
+    
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if (editingStyle == .delete) {
+            
+            //delete the cell
+            names?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
+    
     
     //MARK: - IBAction
     

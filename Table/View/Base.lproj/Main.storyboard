@@ -160,6 +160,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MzF-gQ-xYc"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="5UI-VQ-6oI">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="273-mJ-nV4">
+                            <connections>
+                                <action selector="editButton_TouchUpInside:" destination="xrL-n0-bp9" id="uBD-v2-ph3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSl-om-g4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

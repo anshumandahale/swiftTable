@@ -12,8 +12,10 @@ import Eureka
 class DetailViewController: FormViewController {
     
     var player: Player!
+    var editable: Bool = false
     
-
+    
+    //MARK: View Lifecycle
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -27,18 +29,23 @@ class DetailViewController: FormViewController {
                 row.placeholder = "Player Name"
                 row.tag = "name"
                 row.value = player.firstName
+                row.baseCell.isUserInteractionEnabled = editable
+                
             }
             <<< TextRow () { row in
                 
                 row.placeholder = "Player Last Name"
                 row.tag = "lastName"
                 row.value = player.lastName
+                row.baseCell.isUserInteractionEnabled = editable
+                
             }
             <<< DateRow () { row in
                 
                 row.title = "Date of birth"
                 row.tag = "dob"
                 row.value = player.dob
+                row.baseCell.isUserInteractionEnabled = editable
         }
         
         form +++ Section("Professional Details")
@@ -47,6 +54,7 @@ class DetailViewController: FormViewController {
                 row.title = "Matches"
                 row.tag = "matches"
                 row.value = player.matches
+                row.baseCell.isUserInteractionEnabled = editable
         }
 
     }
@@ -57,6 +65,25 @@ class DetailViewController: FormViewController {
     }
     
 
+    // MARK: IBActions
+    
+    @IBAction func editButton_TouchUpInside(_ sender: Any) {
+        
+        let button:UIBarButtonItem = sender as! UIBarButtonItem
+        if(button.title == "Edit") {
+            
+            button.title = "Done"
+            editable = false
+        }
+        else if(button.title == "Done") {
+            
+            button.title = "Edit"
+            editable = true
+        }
+        
+        self.tableView.reloadData()
+    }
+    
     /*
     // MARK: - Navigation
 
